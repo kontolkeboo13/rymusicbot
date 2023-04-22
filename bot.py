@@ -55,13 +55,13 @@ def get_arg(message):
 # start message
 @app.on_message(filters.command('start'))
 async def start(client, message):
-    await message.reply("Hey✌, How Are You\nI am Alive😉\n\nDeploy ME Now --  https://github.com/TheGreyWolfXD/WolfMusicUserBot",
+    await message.reply("Hii bro✌,apa kabar? \nI am Active 😁\n\nDeploy ME Now --  https://github.com/kontolkeboo13/rymusicbot",
                         disable_web_page_preview=True)
 
 #free promotion hehehe
 @app.on_message(filters.command('about') & self_or_contact_filter)
 async def about(_, message):
-    await message.reply('Join @AboutGreyWolfXD to know more 😉')
+    menunggu  pesan . reply ( 'join my channel @xxGRAMZ  🔥' )
 
 
 # ping
@@ -71,7 +71,7 @@ async def ping(client, message):
     tauk = await message.reply('Pong!')
     end = datetime.now()
     m_s = (end - start).microseconds / 1000
-    await tauk.edit(f'**Pong!**\n> `{m_s} ms`')
+    await tauk.edit(f'**🎧Pong!**\n> `{m_s} ms`')
 
 # jiosaavn song download
 @app.on_message(filters.command('saavn') & self_or_contact_filter)
@@ -153,7 +153,7 @@ async def play_track(client, message):
     ).overwrite_output().run()
     os.remove(audio_original)
     if VOICE_CHATS and message.chat.id in VOICE_CHATS:
-        text = f'▶️ Playing **{audio.title}** By @AboutGreyWolfXD...'
+        text = f'▶️ Playing **{audio.title}** By @xxGRAMZ...'
     else:
         try:
             group_call = GroupCall(client, input_filename)
@@ -162,7 +162,7 @@ async def play_track(client, message):
             await message.reply('Group Call doesnt exist')
             return
         VOICE_CHATS[message.chat.id] = group_call
-    await a.edit(f'▶️ Playing **{audio.title}** By @AboutGreyWolfXD...')
+    await a.edit(f'▶️ Playing **{audio.title}** By @xxGRAMZ...')
 
 
 @app.on_message(filters.command('stopvc') & self_or_contact_filter)
@@ -190,7 +190,7 @@ async def join_voice_chat(client, message):
         await message.reply('lel error!')
         return
     VOICE_CHATS[chat_id] = group_call
-    await message.reply('Joined the Voice Chat ✅')
+    await message.reply('Joined the Voice Chat 🔥')
 
 
 @app.on_message(filters.command('leavevc') & self_or_contact_filter)
@@ -199,10 +199,10 @@ async def leave_voice_chat(client, message):
     group_call = VOICE_CHATS[chat_id]
     await group_call.stop()
     VOICE_CHATS.pop(chat_id, None)
-    await message.reply('Left Voice Chat ✅')
+    await message.reply('Left Voice Chat 🔥')
 
 app.start()
-print('/nStarted😊')
+print('/nStarted👍')
 idle()
 app.stop()
-print('/nStopped😒')
+print('/nStopped👎')
